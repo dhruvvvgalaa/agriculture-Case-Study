@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Irrigation Advisory System for Sugarcane Crop</title>
+<style>
+        body { font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+        }
+        h6 { text-align: center;
+            color: green;
+        }
+        form { width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label { font-weight: bold;
+        }
+        input, select {width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        } 
+        }
+        .buttons {text-align: center;
+        }
+        button {padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body <form style="background-color:white;" onsubmit="submittedMessage()">
+<!-- This is a comment -->
+<hr>
+
+<h2 style="text-align:center;font-size:150%;color:black;background-color:beige"> <i>Irrigation Advisory System for Sugarcane Crop using AI and Sensor-based
+Technology </i><br></br> </h2>
+<hr>
+<br><br>   
+
+<h6 style="font-size:150%;text-align:center;color:lightgreen">FARMER REGISTRATION FORM</h6>
+<br><br>
+<form style="background-color:white;">
+Farmer Name :<input type="text" name="first_name"/>
+<br><br>
+Mobile No :<input type="number" name="mobile_no"/>
+<br><br>
+Email Address :<input type="email" name="email-id"/>
+<br><br>
+Village name :<input type="text" Village="Village_name"/>
+<br><br>
+Plot Id :<input type="text" Plot Id="Plot_id"/><br><br>
+Crop Variety :<input type="text" name="cropVariety" ><br><br>
+Farm Area :<input type="text" name="Farm_area" ><br><br>
+Irrigation Method :<select name="Dropdown"/>
+<option> Select Irrigation Method </option>
+<option> Drip Irrigation </option>
+<option> Sprinkler Irirgation" </option>
+<option> Surface Irrigation </option>
+<option> Flood Irrigation </option>
+</select>
+<br><br>
+<label>Preferred Language:</label>
+    <input class="radio" type="radio" name="language" value="English"> English
+    <input class="radio" type="radio" name="language" value="Hindi"> Hindi
+    <input class="radio" type="radio" name="language" value="Marathi"> Marathi
+
+    <br><br>
+
+    <label>Advisory Services Required:</label>
+    <input class="checkbox" type="checkbox" name="service" value="Weather Updates">
+    Weather Updates
+    <input class="checkbox" type="checkbox" name="service" value="Crop Guidance">
+    Crop Guidance
+    <input class="checkbox" type="checkbox" name="service" value="Market Prices">
+    Market Prices
+    <input class="checkbox" type="checkbox" name="service" value="Government Schemes">
+    Government Schemes
+<br><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+</form>
+
+<hr>
+<script>
+function submittedMessage()
+{
+    alert("Form Submitted Successfully!");
+}
+</script>
+</body>
+</html>

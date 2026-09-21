@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Irrigation Advisory System</title>
+
+    <link rel="stylesheet" href="form-1.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Irrigation Advisory System</h1>
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li>Home</li>
+            <li>Farmers</li>
+            <li>Advisory</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <form>
+            <fieldset>
+                <legend>Farmer Registration Form</legend>
+
+                <label>Farmer Name:</label><br>
+                <input type="text" name="fname" required><br>
+
+                <label>Mobile Number:</label><br>
+                <input type="tel" name="mobile" required><br>
+
+                <label>Email Address:</label><br>
+                <input type="email" name="email"><br>
+
+                <label>Village:</label><br>
+                <input type="text" name="village"><br>
+
+                <label>Plot ID:</label><br>
+                <input type="text" name="plotid"><br>
+
+                <label>Crop Variety:</label><br>
+                <input type="text" name="crop"><br>
+
+                <label>Farm Area:</label><br>
+                <input type="text" name="area"><br>
+
+                <label>Irrigation Method:</label><br>
+                <select>
+                    <option>Drip Irrigation</option>
+                    <option>Sprinkler Irrigation</option>
+                    <option>Flood Irrigation</option>
+                </select><br>
+
+                <label>Preferred Language:</label><br>
+                <input type="radio" name="lang"> English
+                <input type="radio" name="lang"> Hindi
+                <input type="radio" name="lang"> Marathi
+
+                <br><br>
+
+                <label>Advisory Services Required:</label><br>
+                <input type="checkbox"> Weather Updates
+                <input type="checkbox"> Irrigation Advice
+                <input type="checkbox"> Crop Monitoring
+
+                <br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+
+            </fieldset>
+        </form>
+
+        <h2>Main Content</h2>
+
+        <p>
+            This section contains the main content of the website.
+            Information about irrigation methods, crop monitoring,
+            weather updates, and advisory services can be displayed here.
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Irrigation Advisory System</p>
+</footer>
+
+</body>
+</html>
