@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Irrigation Recommendations | AI Irrigation Advisory System</title>
+
+    <style>
+
+        :root {
+            --green: #4e7d29;
+            --ink: #2a2a2a;
+            --bg: #f6f4ee;
+            --card: #ffffff;
+            --border: #dcd8c9;
+            --head: #2f5d28;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.5;
+        }
+
+        header {
+            background: var(--head);
+            color: #fff;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 6px;
+            font-size: 1.6rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 28px 16px 60px;
+        }
+
+        .table-wrap {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 900px;
+            font-size: 0.92rem;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        caption span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border);
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        thead tr.group-row th {
+            background: var(--head);
+            color: #fff;
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        thead tr.col-row th {
+            background: #e9f0e3;
+            color: #1b3a10;
+            font-size: 0.85rem;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafaf5;
+        }
+
+        tbody tr:hover {
+            background: #f1f7ec;
+        }
+
+        td.farmer-cell {
+            font-weight: 600;
+            background: #f4f1e6;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .status-irrigate {
+            background: #2e7d32;
+        }
+
+        .status-urgent {
+            background: #c62828;
+        }
+
+        .status-hold {
+            background: #f9a825;
+            color: #3a2a00;
+        }
+
+        .status-none {
+            background: #757575;
+        }
+
+        tfoot td {
+            background: #eef2e7;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #444;
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.8rem;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Plot-wise Irrigation Recommendations</h1>
+
+        <p>
+            AI-Powered Irrigation Advisory System —
+            Sugarcane Cooperative, Northern Karnataka
+        </p>
+
+    </header>
+
+    <main>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <caption>
+
+                    Irrigation Advisory Report — 29 Aug 2026
+
+                    <span>
+                        Recommendations generated from soil sensor readings,
+                        crop growth stage and 24-hour weather forecast
+                    </span>
+
+                </caption>
+
+                <thead>
+
+                    <tr class="group-row">
+
+                        <th colspan="3">Plot &amp; Crop Details</th>
+
+                        <th colspan="2">Field Conditions</th>
+
+                        <th colspan="3">Irrigation Recommendation</th>
+
+                    </tr>
+
+                    <tr class="col-row">
+
+                        <th scope="col">Plot ID</th>
+
+                        <th scope="col">Farmer Name</th>
+
+                        <th scope="col">Crop Stage</th>
+
+                        <th scope="col">Soil Moisture (%)</th>
+
+                        <th scope="col">Weather Forecast</th>
+
+                        <th scope="col">Recommended Date</th>
+
+                        <th scope="col">Duration</th>
+
+                        <th scope="col">Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <!-- Ramesh Patil — 2 plots, Farmer Name cell merged with rowspan -->
+
+                    <tr>
+
+                        <td>KIAAR-A1</td>
+
+                        <td class="farmer-cell" rowspan="2">
+                            Ramesh Patil
+                        </td>
+
+                        <td>
+                            Sugarcane — Grand Growth
+                        </td>
+
+                        <td>22.4</td>
+
+                        <td>
+                            Clear, no rain expected
+                        </td>
+
+                        <td>30 Aug 2026</td>
+
+                        <td>2.5 hrs</td>
+
+                        <td>
+                            <span class="status status-irrigate">
+                                Irrigate
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>KIAAR-A2</td>
+
+                        <td>
+                            Sugarcane — Tillering
+                        </td>
+
+                        <td>35.1</td>
+
+                        <td>
+                            Cloudy, 20% rain
+                        </td>
+
+                        <td>—</td>
+
+                        <td>—</td>
+
+                        <td>
+                            <span class="status status-hold">
+                                Hold
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <!-- Suresh Kambli — 2 plots -->
+
+                    <tr>
+
+                        <td>KIAAR-B1</td>
+
+                        <td class="farmer-cell" rowspan="2">
+                            Suresh Kambli
+                        </td>
+
+                        <td>
+                            Wheat — Vegetative
+                        </td>
+
+                        <td>31.0</td>
+
+                        <td>Sunny</td>
+
+                        <td>02 Sep 2026</td>
+
+                        <td>1.5 hrs</td>
+
+                        <td>
+                            <span class="status status-irrigate">
+                                Irrigate
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>KIAAR-B2</td>
+
+                        <td>
+                            Cotton — Flowering
+                        </td>
+
+                        <td>18.7</td>
+
+                        <td>
+                            Sunny, no rain
+                        </td>
+
+                        <td>29 Aug 2026</td>
+
+                        <td>3 hrs</td>
+
+                        <td>
+                            <span class="status status-urgent">
+                                Urgent
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <!-- Meena Joshi — 1 plot, no rowspan needed -->
+
+                    <tr>
+
+                        <td>KIAAR-C1</td>
+
+                        <td class="farmer-cell">
+                            Meena Joshi
+                        </td>
+
+                        <td>
+                            Maize — Grand Growth
+                        </td>
+
+                        <td>26.5</td>
+
+                        <td>
+                            Rain expected (60%)
+                        </td>
+
+                        <td>—</td>
+
+                        <td>—</td>
+
+                        <td>
+                            <span class="status status-hold">
+                                Hold
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <!-- Anil Deshmukh — 2 plots -->
+
+                    <tr>
+
+                        <td>KIAAR-D1</td>
+
+                        <td class="farmer-cell" rowspan="2">
+                            Anil Deshmukh
+                        </td>
+
+                        <td>
+                            Sugarcane — Maturity
+                        </td>
+
+                        <td>40.2</td>
+
+                        <td>Clear</td>
+
+                        <td>01 Sep 2026</td>
+
+                        <td>2 hrs</td>
+
+                        <td>
+                            <span class="status status-irrigate">
+                                Irrigate
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>KIAAR-D2</td>
+
+                        <td>
+                            Sugarcane — Germination
+                        </td>
+
+                        <td>15.0</td>
+
+                        <td>
+                            Clear, dry spell
+                        </td>
+
+                        <td>29 Aug 2026</td>
+
+                        <td>3.5 hrs</td>
+
+                        <td>
+                            <span class="status status-urgent">
+                                Urgent
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <!-- Farmhouse hub — single plot, no irrigation needed -->
+
+                    <tr>
+
+                        <td>KIAAR-E1</td>
+
+                        <td class="farmer-cell">
+                            Lata Naik
+                        </td>
+
+                        <td>
+                            Sugarcane — Ripening
+                        </td>
+
+                        <td>33.8</td>
+
+                        <td>Clear</td>
+
+                        <td>—</td>
+
+                        <td>—</td>
+
+                        <td>
+                            <span class="status status-none">
+                                Not Required
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+
+                    <tr>
+
+                        <td colspan="8">
+                            Report generated: 29 Aug 2026, 10:30 AM
+                            &nbsp;|&nbsp;
+                            Plots monitored: 8
+                            &nbsp;|&nbsp;
+                            Farmers: 5
+                            &nbsp;|&nbsp;
+                            Plots needing irrigation: 4
+                        </td>
+
+                    </tr>
+
+                </tfoot>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        Irrigation Recommendation Page demo —
+        Task 7: Tables · K J Somaiya AI Irrigation Advisory Use Case
+
+    </footer>
+
+</body>
+
+</html>
