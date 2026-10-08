@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture & Smart Irrigation Gallery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7f2;
+            color: #333;
+        }
+
+        header {
+            background: #1b3a10;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #2f5d1f;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .image-gallery {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .image-gallery h2 {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: #1b3a10;
+        }
+
+        .image-gallery > p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        .gallery-item {
+            background: #f6f4ee;
+            border: 1px solid #e0ddd2;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item h3 {
+            margin: 12px 14px 2px;
+            font-size: 1rem;
+            color: #1b3a10;
+        }
+
+        .gallery-item p {
+            margin: 0 14px 14px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>AI Irrigation Advisory System</h1>
+        <p>Agriculture & Smart Irrigation Gallery</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Farm Map</a>
+        <a href="#">Recommendations</a>
+        <a href="#">Gallery</a>
+    </nav>
+
+    <section class="image-gallery">
+
+        <h2>Agriculture & Smart Irrigation Gallery</h2>
+
+        <p>
+            Images related to agriculture, smart irrigation,
+            IoT sensors and farm monitoring.
+        </p>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="sugarcane.jpg" alt="Sugarcane Farm">
+                <h3>Sugarcane Farm</h3>
+                <p>Healthy crop growth supported by proper irrigation.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="iot-sensors.jpg" alt="IoT Sensors">
+                <h3>IoT Sensors</h3>
+                <p>Smart sensors monitor soil and environmental conditions.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="smart-irrigation.jpg" alt="Smart Irrigation">
+                <h3>Smart Irrigation</h3>
+                <p>Automated irrigation helps provide water efficiently.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="farm-monitoring.jpg" alt="Farm Monitoring">
+                <h3>Farm Monitoring</h3>
+                <p>Technology helps farmers monitor their fields.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="geofenced-farm.jpg" alt="Geofenced Farm">
+                <h3>Geofenced Farm</h3>
+                <p>Farm plots can be monitored using location-based systems.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="farmer-advisory.jpg" alt="Farmer Advisory">
+                <h3>Farmer Advisory</h3>
+                <p>Smart recommendations help farmers make better decisions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
