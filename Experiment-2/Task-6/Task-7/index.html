@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Price List</title>
+
+    <style>
+        :root {
+            --green: #4e7d29;
+            --green-dark: #1b3a10;
+            --ink: #2a2a2a;
+            --bg: #f6f4ee;
+            --card: #ffffff;
+            --border: #e4e0d0;
+            --head: #2f5d28;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Verdana, sans-serif;
+            color: var(--ink);
+            line-height: 1.5;
+            background: var(--bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--head), var(--green));
+            color: white;
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 6px;
+            font-size: 1.7rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .main-nav {
+            background: var(--green-dark);
+            padding: 12px 16px;
+            text-align: center;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .table-wrap,
+        .table-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--green-dark);
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: var(--head);
+            color: white;
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        /* Zebra-striping */
+        tbody tr:nth-child(even) {
+            background-color: #eef3e9;
+        }
+
+        tbody tr:hover {
+            background-color: #e2ecd9;
+        }
+
+        .note {
+            text-align: center;
+            color: #777;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>AI Irrigation Advisory System</h1>
+        <p>Irrigation Recommendations & Equipment Price List</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="#">Home</a>
+        <a href="#">Farm Map</a>
+        <a href="#">Recommendations</a>
+        <a href="#">Gallery</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Plot-wise Irrigation Recommendations -->
+
+        <section class="table-wrap">
+
+            <h2>Plot-wise Irrigation Recommendations</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plot</th>
+                        <th>Crop</th>
+                        <th>Soil Moisture</th>
+                        <th>Recommendation</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Plot A</td>
+                        <td>Sugarcane</td>
+                        <td>32%</td>
+                        <td>Start Irrigation</td>
+                        <td>30 min</td>
+                    </tr>
+
+                    <tr>
+                        <td>Plot B</td>
+                        <td>Wheat</td>
+                        <td>48%</td>
+                        <td>Normal Irrigation</td>
+                        <td>20 min</td>
+                    </tr>
+
+                    <tr>
+                        <td>Plot C</td>
+                        <td>Cotton</td>
+                        <td>61%</td>
+                        <td>No Irrigation</td>
+                        <td>0 min</td>
+                    </tr>
+
+                    <tr>
+                        <td>Plot D</td>
+                        <td>Maize</td>
+                        <td>38%</td>
+                        <td>Start Irrigation</td>
+                        <td>25 min</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- Irrigation Equipment & Sensor Price List -->
+
+        <section class="table-card">
+
+            <h2>Irrigation Equipment & Sensor Price List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Equipment</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price (₹)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Soil Moisture Sensor</td>
+                        <td>Sensor</td>
+                        <td>1</td>
+                        <td>850</td>
+                    </tr>
+
+                    <tr>
+                        <td>Water Flow Sensor</td>
+                        <td>Sensor</td>
+                        <td>1</td>
+                        <td>650</td>
+                    </tr>
+
+                    <tr>
+                        <td>Drip Irrigation Kit</td>
+                        <td>Hardware</td>
+                        <td>1</td>
+                        <td>2500</td>
+                    </tr>
+
+                    <tr>
+                        <td>Automatic Water Pump</td>
+                        <td>Automation</td>
+                        <td>1</td>
+                        <td>4500</td>
+                    </tr>
+
+                    <tr>
+                        <td>IoT Gateway</td>
+                        <td>Hardware</td>
+                        <td>1</td>
+                        <td>3200</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <p class="note">
+            Task 7: Table Styling for Price List
+        </p>
+
+    </main>
+
+</body>
+</html>
