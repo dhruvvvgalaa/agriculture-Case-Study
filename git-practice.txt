@@ -1,0 +1,3 @@
+My Git and GitHub Practical
+Experiment 3
+Practising Git commands: add, commit, and push.
